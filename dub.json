@@ -7,7 +7,6 @@
 	"Andrey Kabylin"
     ],
     "dependencies": {
-        "d-unit": "~>0.8.1",
         ":ddmd-parser": "*",
     },
     "subPackages": [
