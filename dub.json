@@ -1,0 +1,53 @@
+{
+    "name": "ddmd-template",
+    "description": "A minimal D application.",
+    "copyright": "Copyright © 2017, Andrey Kabylin",
+    "license": "MIT",
+    "authors": [
+	"Andrey Kabylin"
+    ],
+    "dependencies": {
+        "d-unit": "~>0.8.1",
+        ":ddmd-parser": "*",
+    },
+    "subPackages": [
+        {
+            "name": "ddmd-parser",
+	    "targetType": "library",
+            "importPaths": [
+                "dmd/src"
+            ],
+            "preGenerateCommands": [
+                "cd \"$${DUB_PACKAGE_DIR}\" && ./dmd/config.sh dmd/generated/dub dmd/VERSION /etc"
+            ],
+            "stringImportPaths": [
+                "dmd/res",
+                "dmd/generated/dub",
+            ],
+            "versions": [
+                "NoBackend",
+                "MARS"
+            ],
+            "excludedSourceFiles": [
+                "dmd/src/ddmd/glue.d",
+                "dmd/src/ddmd/iasm.d",
+                "dmd/src/ddmd/libmach.d",
+                "dmd/src/ddmd/e2ir.d",
+                "dmd/src/ddmd/s2ir.d",
+                "dmd/src/ddmd/toir.d",
+                "dmd/src/ddmd/libmscoff.d",
+                "dmd/src/ddmd/objc_glue.d",
+                "dmd/src/ddmd/s2ir.d",
+                "dmd/src/ddmd/scanmach.d",
+                "dmd/src/ddmd/scanmscoff.d",
+                "dmd/src/ddmd/tocsym.d",
+                "dmd/src/ddmd/toctype.d",
+                "dmd/src/ddmd/todt.d",
+                "dmd/src/ddmd/toobj.d"
+            ],
+	    "sourcePaths": [
+                "dmd/src/ddmd"
+            ]
+        }
+    ]
+}
